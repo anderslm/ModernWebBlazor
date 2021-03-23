@@ -1,0 +1,38 @@
+<div class="columns">
+  <div class="column">
+    <section class="section">
+        <div class="content">
+          <h1 class="title">Welcome to Bolero!</h1>
+          <p>Here's a list of diseases</p>
+            <table>
+                <thead>
+                    <tr>
+                        <td>Name</td>
+                        <td>InfectiousAgent</td>
+                        <td>Reservoir</td>
+                        <td>Portal of exit</td>
+                        <td>Mode of transmission</td>
+                        <td>Portal of entry</td>
+                        <td>Susceptible host</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    ${Diseases}
+                    <template id="DiseaseTemplate">
+                        <tr>
+                            <td>${Name}</td>
+                            <td>${InfectiousAgent}</td>
+                            <td>${Reservoir}</td>
+                            <td>${PortalOfExit}</td>
+                            <td>${ModeOfTransmission}</td>
+                            <td>${PortalOfEntry}</td>
+                            <td>${SusceptibleHost}</td>
+                        </tr>
+                    </template>
+                </tbody>
+            </table>
+            <button onclick="${Create}">Create new</button>
+        </div>
+    </section>
+  </div>
+</div>

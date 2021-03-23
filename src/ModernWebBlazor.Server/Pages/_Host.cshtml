@@ -22,7 +22,7 @@
         </a>
       </div>
     </nav>
-    <div id="main">@(await Html.RenderComponentAsync<ModernWebBlazor.Client.Main.MyApp>(BoleroHostConfig))</div>
+    <div id="main">@(await Html.RenderComponentAsync<Browser.Program.MyApp>(BoleroHostConfig))</div>
     @Html.RenderBoleroScript(BoleroHostConfig)
   </body>
 </html>

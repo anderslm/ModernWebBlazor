@@ -5,16 +5,11 @@ open Microsoft.AspNetCore.Authentication.Cookies
 open Microsoft.AspNetCore.Builder
 open Microsoft.AspNetCore.Hosting
 open Microsoft.Extensions.DependencyInjection
-open Bolero
 open Bolero.Remoting.Server
 open Bolero.Server.RazorHost
-open ModernWebBlazor
 open Bolero.Templating.Server
 
 type Startup() =
-
-    // This method gets called by the runtime. Use this method to add services to the container.
-    // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
     member this.ConfigureServices(services: IServiceCollection) =
         services.AddMvc().AddRazorRuntimeCompilation() |> ignore
         services.AddServerSideBlazor() |> ignore
@@ -23,15 +18,14 @@ type Startup() =
             .AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
                 .AddCookie()
                 .Services
-            .AddRemoting<BookService>()
+            .AddRemoting<DiseasesService>()
             .AddBoleroHost()
 #if DEBUG
-            .AddHotReload(templateDir = __SOURCE_DIRECTORY__ + "/../ModernWebBlazor.Client")
+            .AddHotReload(templateDir = __SOURCE_DIRECTORY__ + "/../ModernWebBlazor.Browser")
 #endif
         |> ignore
 
-    // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-    member this.Configure(app: IApplicationBuilder, env: IWebHostEnvironment) =
+    member this.Configure(app: IApplicationBuilder, _: IWebHostEnvironment) =
         app
             .UseAuthentication()
             .UseRemoting()

@@ -2,6 +2,7 @@
 <Project Sdk="Microsoft.NET.Sdk.BlazorWebAssembly">
   <PropertyGroup>
     <TargetFramework>net5.0</TargetFramework>
+    <RootNamespace>ModernWebBlazor.Client</RootNamespace>
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="Main.fs" />
@@ -12,5 +13,8 @@
     <PackageReference Include="Bolero.Build" Version="0.*" />
     <PackageReference Include="Bolero.HotReload" Version="0.*" />
     <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.DevServer" Version="5.0.*" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Diseases\Diseases.fsproj" />
   </ItemGroup>
 </Project>

@@ -1,0 +1,23 @@
+[
+  {
+    "Name": "Covid 19",
+    "ChainOfInfection": {
+      "InfectiousAgent": "Viruses",
+      "Reservoir": [
+        "People"
+      ],
+      "PortalOfExit": [
+        "Mouth"
+      ],
+      "ModeOfTransmission": [
+        "Contact"
+      ],
+      "PortalOfEntry": [
+        "Mouth"
+      ],
+      "SusceptibleHost": [
+        "Elderly"
+      ]
+    }
+  }
+]
